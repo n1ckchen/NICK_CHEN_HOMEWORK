@@ -1,0 +1,94 @@
+Css - styling language, style the appearance of our pages/html, used for presentation
+Rgb, 0-255
+Hsla -  hue  色调, saturation饱和度, lightness ,opacity
+Selector { 
+	Property1: value;
+	Property2: value;
+}
+Class and ID are the most common tag/selector
+Id is unique
+
+*{ font-family: Arial;
+}selects all, set default
+
+Three ways to load css
+In-line, style element, external css style sheet
+
+Font sizing: px,em,rem 
+Specificity - tag priority, which color will show
+
+Avoid !important or in-line style
+
+Padding - space between content to border
+Border - the width of content
+Margin - how far this element from other element, space out elements
+
+Box-sizing
+Content - box , border-box better
+
+Cross browser compability
+Css reset - erase default style, keep consistent
+
+Responsive web design - look nice in different devices
+media query - apply css styles base on device’s media type, such as print,screen
+(break points(max width, height, etc.), desktop first design)
+Use, 
+
+ ‘@media’ all and (max-width: 500px) {
+
+}
+
+
+Flex -  one dimensional layout
+Grid - two dimensional layout
+Elements can overflow
+
+Bem - naming pattern, define and structure css, give css code a solid structure 
+that remains simple and easy to undsertsnad
+Block - a standalone entity that is meaningful on it’s own
+Element - no standalone meaning but semantically tie to its block
+Modifier - a flag on a block or element. Use them to change appearance or behavior
+
+Flex-box - style flexibility, display:flex ,  container
+Row or column base layout, main axis(flex-direction) and cross axis
+You don’t need to style individual items inside the flex-container
+<div class=”flexbox-container”>
+	<div>item 1<div>
+	<div>iterm2<div>
+</div>
+Use justify-content - to style items on main axis
+Align items - align vertically (align items: center)
+Align content
+Flex-wrap: wrap
+Flex-shrink - don’t change size
+flex-grow  - take up the leftover space
+Flex-grow: 2, flex-grow: 1, 2:1  space ratio
+Flex-basis
+Align-self overwrites
+order -change the item order without changing html, 
+but not good for screen reader
+
+.flexbox-container {
+Display:flex;
+Justify-content: center;
+Align-item: center;
+}
+
+Flex-grow,flex-shrink,flex-basis
+Flex: 1,0,0px;
+Flex: 1
+
+Grid - two dimension flex-box ,  container
+.grid-container { 
+Display:grid;
+Grid-template-columns ;
+Grid-auto-rows;
+Grid-coloumn-gap;
+grid-template-areas:
+
+}
+For item, grid-area
+Grid-column
+Grid-row-start
+Grid-row-end
+Grid-row: span
