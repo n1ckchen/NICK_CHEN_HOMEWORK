@@ -23,7 +23,12 @@ form {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-h1, h5 {
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+h5 {
     color: #333;
 }
 
@@ -34,6 +39,7 @@ h1, h5 {
 
 .input-group input {
     width: 48%;
+    margin-bottom: 10px;
 }
 
 input[type="text"],
@@ -53,15 +59,28 @@ input[type="checkbox"] {
     margin-right: 5px;
 }
 
+label {
+    display: inline-block;
+}
+
+label a {
+    color: green;
+    text-decoration: none;
+}
+
+label a:hover {
+    text-decoration: underline;
+}
+
 button {
-    background-color: #007bff;
+    background-color: green;
     color: white;
     border: none;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: darkgreen;
 }
 
 p {

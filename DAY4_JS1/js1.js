@@ -44,18 +44,18 @@
 // switch statement: Evaluates an expression and executes different code blocks based on matching cases.
 
 // continue: Skips the current iteration of a loop and continues with the next iteration.
-// for (let i = 0; i < 5; i++) {
-//     if (i === 2) {
-//         continue; // Skip printing 2
-//     }
-//     console.log(i);
-// }
+for (let i = 0; i < 5; i++) {
+    if (i === 2) {
+        continue; // Skip printing 2
+    }
+    console.log(i);
+}
 
 // break: Terminates the loop or switch statement and transfers control to the statement immediately following the loop or switch.
-// for (let i = 0; i < 5; i++) {
-//     if (i === 3) {
-//         break; // Exit loop when i is 3
-//     }
-//     console.log(i);
-// }
+for (let i = 0; i < 5; i++) {
+    if (i === 3) {
+        break; // Exit loop when i is 3
+    }
+    console.log(i);
+}
 
