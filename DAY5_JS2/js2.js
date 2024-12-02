@@ -52,3 +52,32 @@
 // const _ = require('lodash');
 // const originalObject = { a: 1, b: { c: 2 } };
 // const deepCopy = _.cloneDeep(originalObject);
+
+// const deepClone = (obj) => {
+//     if (typeof obj !== 'object' || obj === null) return obj;
+
+
+//     const newObj = Array.isArray(obj) ? [] :{};
+//     for( let key of obj) {
+//         const value = obj[key];
+//         newObj[key] = deepClone(value);
+
+
+//     }
+//     return newObj;
+// }
+// // Nullish Coalescing： ??
+// // Styling Console Log： c%
+// // Optional Chaining: ?.
+// // Object Shorthand：if key = value
+// // Defer/Async Loading: no need to wait for page rendering
+
+
+
+
+// Ternary operator, shortcut for if{} and else {} statements
+// Condition ? codeIfTrue : codeIfFalse;
+
+
+// Logical operators: used to combine or manipulate boolean values
+// &&,||,!
