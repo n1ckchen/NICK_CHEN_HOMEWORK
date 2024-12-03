@@ -8,6 +8,7 @@ export function destructurePerson1() {
     job: "teacher",
   };
   // Write your code here
+  console.log(`${person.name} is ${person.age} years old and is a ${person.job}`);
 }
 
 export function destructurePerson2() {
@@ -23,6 +24,7 @@ export function destructurePerson2() {
     },
   };
   // Write your code here
+  console.log(`${person.name} is ${person.age} years old and lives in ${person.address.city}`);
 }
 
 export function destructurePerson3() {
