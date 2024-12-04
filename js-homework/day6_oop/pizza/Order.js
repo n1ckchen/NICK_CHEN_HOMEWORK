@@ -23,11 +23,7 @@ export default class Order {
   }
 
   getTotalCost() {
-    let totalCost = 0;
-    this.pizzas.forEach((pizza) => {
-      totalCost += pizza.cost || 0;
-    });
-    return totalCost;
+    return this.pizzas.reduce((total, pizza) => total + pizza.getTotalCost(), 0);
   }
 
   updateStatus(newStatus) {

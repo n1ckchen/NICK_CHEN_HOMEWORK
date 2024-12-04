@@ -135,3 +135,4 @@ export function spreadArr() {
   // expected arr5: [0, 1, 2, 3, 4, 5, 6]
   // const arr5 = [0, ...arr1, ...arr2 ];
 }
+
