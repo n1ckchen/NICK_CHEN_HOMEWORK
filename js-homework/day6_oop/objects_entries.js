@@ -7,8 +7,6 @@ const people = {
 // get the average age of the people
 export const getAverageAge = (people) => {
   const ageArr = Object.values(people).map(person => person.age);
-  const totalAge = ageArr.reduce((sum, age) => {
-    sum + age
-  }, 0);
-  return totalAge / ageArr,length;
+  const totalAge = ageArr.reduce((sum, age) => sum + age, 0);
+  return totalAge / ageArr.length;
 };

@@ -41,6 +41,7 @@ export function destructurePerson3() {
   };
 
   // Write your code here
+  const {name : person_name, age, job} = person;
 }
 
 export function destructurePerson4() {
@@ -56,6 +57,7 @@ export function destructurePerson4() {
 
   // destructure the name and age of person4, and use rest operator to get the rest of the properties
   // write your code here
+  const { name, age, ...rest } = person; 
 }
 
 export function destructureArray1() {
@@ -63,6 +65,8 @@ export function destructureArray1() {
   // expected output: "1 5"
   const arr = [1, 2, 3, 4, 5];
   // Write your code here
+
+  const [a, , , , d] = arr;
 }
 
 export function destructureArray2() {
@@ -83,12 +87,14 @@ export function destructureArray2() {
 
   // destructure the methods from the array, and call them
   // Write your code here
+  [ get, post, put, deleteMethod] = methods; 
 }
 
 export function destructureArray3() {
   const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   // destructure the first 3 elements, and use rest operator to get the rest of the elements
   // Write your code here
+  const [a, b, c, ...rest] = arr;
 }
 
 export function spreadObj() {
@@ -98,13 +104,13 @@ export function spreadObj() {
     job: "teacher",
   };
   // 1. use spread operator to create a new object with the same properties as person
-  // const person1 =
+  // const person1 = { ...person };
 
   // 2. step 1, but change the name to "Bob"
-  // const person2 =
+  // const person2 = { ...person, name: "Bob"};
 
   // 3. step 1, but add a new property, hobby: "reading"
-  // const person3 =
+  // const person3 = { ...person, hobby: "reading" };
 
   const additionalInfo = {
     salary: 50000,
@@ -112,19 +118,20 @@ export function spreadObj() {
     favFood: "pizza",
   };
   // 4. use spread operator to merge the additionalInfo object with the person object
-  // const person4 =
+  // const person4 = { ...additionalInfo, ...person };
 }
 
 export function spreadArr() {
   const arr1 = [1, 2, 3];
   const arr2 = [4, 5, 6];
   // 1. use spread operator to create a new array that combines arr1 and arr2
-  // const arr3 =
+  // const arr3 = [ ...arr1, ...arr2 ];
 
   // 2. use spread operator to create a new array that combines arr1 and arr2, but add a new element, 7
   // expected arr4: [1, 2, 3, 4, 5, 6, 7]
-  // const arr4 =
+  // const arr4 = [ ...arr1, ...arr2, 7]
 
   // 3. combine arr1 and arr2, but add a new element, 0, at the beginning
   // expected arr5: [0, 1, 2, 3, 4, 5, 6]
+  // const arr5 = [0, ...arr1, ...arr2 ];
 }
