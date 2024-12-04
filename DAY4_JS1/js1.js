@@ -44,18 +44,52 @@
 // switch statement: Evaluates an expression and executes different code blocks based on matching cases.
 
 // continue: Skips the current iteration of a loop and continues with the next iteration.
-for (let i = 0; i < 5; i++) {
-    if (i === 2) {
-        continue; // Skip printing 2
+// for (let i = 0; i < 5; i++) {
+//     if (i === 2) {
+//         continue; // Skip printing 2
+//     }
+//     console.log(i);
+// }
+
+// // break: Terminates the loop or switch statement and transfers control to the statement immediately following the loop or switch.
+// for (let i = 0; i < 5; i++) {
+//     if (i === 3) {
+//         break; // Exit loop when i is 3
+//     }
+//     console.log(i);
+// }
+
+function bubbleSortArr1(arr) {
+    const newArr = arr.slice();
+    const n = newArr.length;
+    let swapped;
+    
+    console.log("Initial Array: " + newArr);
+
+    for (let i = 0; i < n; i++) {
+        swapped = false;
+
+        for (let j = 0; j < n - i - 1; j++) {
+            console.log(`i: ${i}, j: ${j}`);
+            console.log(`Comparing elements at indices ${j} and ${j + 1}: ${newArr[j]} > ${newArr[j + 1]}`);
+            
+            if (newArr[j] > newArr[j + 1]) {
+                [newArr[j], newArr[j + 1]] = [newArr[j + 1], newArr[j]];
+                swapped = true;
+                console.log(`Swapping elements: ${newArr[j]} and ${newArr[j + 1]}`);
+            }
+
+            console.log(`Array after ${i} passes and ${j} comparisons: ${newArr}`);
+        }
+
+        if (!swapped) {
+            console.log("No swaps were made in this pass. Array is already sorted.");
+            break;
+        }
     }
-    console.log(i);
+
+    return newArr;
 }
 
-// break: Terminates the loop or switch statement and transfers control to the statement immediately following the loop or switch.
-for (let i = 0; i < 5; i++) {
-    if (i === 3) {
-        break; // Exit loop when i is 3
-    }
-    console.log(i);
-}
+bubbleSortArr1([3,5,543,1]);
 
