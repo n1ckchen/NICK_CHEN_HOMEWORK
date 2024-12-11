@@ -24,12 +24,8 @@ function App() {
     setIsDisabled(false);
   };
 
-  // <boolean> falseckable button
-  // Create a button, when hovered, it should become disabled
-  // Show/Hide Paragraph
-  // Create a component with a button and a paragraph of text. Clicking the button should toggle the visibility of the paragraph.
   const [showText, setShowText] = useState<boolean>(true);
-
+  
   const handleShowText = () => {
     setShowText(!showText);
   };
@@ -40,14 +36,17 @@ function App() {
         <button onClick={decreaseCount}>decrease</button>
         <button onClick={increaseCount}>increase</button>
         <button onClick={setZero}>zero</button>
+        {/* // Create a button, when hovered, it should become disabled */}
         <button
           onMouseOver={handleMouseOver}
           onMouseLeave={handleMouseLeave}
           disabled={isDisabled}
-        >
+          >
           unclickable button
         </button>
       </div>
+          {/* // Show/Hide Paragraph
+          // Create a component with a button and a paragraph of text. Clicking the button should toggle the visibility of the paragraph. */}
       <div>
         {showText && <p>Click on the follow button and see what happens</p>}
         <button onClick={handleShowText}>show/hide</button>
