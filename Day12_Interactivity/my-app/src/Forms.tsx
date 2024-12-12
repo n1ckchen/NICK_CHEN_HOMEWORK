@@ -18,8 +18,8 @@ export const Form = () => {
         <textarea required></textarea>
         <label>Blog author:</label>
         <select>
-          <option value="mario"></option>
-          <option value="mike"></option>
+          <option value="mario">mario</option>
+          <option value="mike">mike</option>
         </select>
         <button type="button">Add Blog</button>
       </form>

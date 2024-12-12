@@ -1,5 +1,4 @@
 // import { useEffect } from "react";
-
 export const fetchUsers = async () => {
     try {
         const res = await fetch('https://jsonplaceholder.typicode.com/users');
@@ -15,7 +14,6 @@ export const fetchUsers = async () => {
     }
 }
 
-fetchUsers();
 
 // const UsersList = () => {
 //     useEffect(() => {
