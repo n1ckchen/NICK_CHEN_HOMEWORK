@@ -1,7 +1,8 @@
 import './App.css'
-import { Form } from './Form'
+import { Form } from './Forms'
 import { Todos } from './todos'
-
+// import UsersList from './Users'
+import { fetchUsers } from './Users'
 
 function App() {
 
@@ -13,7 +14,12 @@ function App() {
       <div>
         <Todos />
       </div>
-
+      <div>
+        <fetchUsers />
+      </div>
+{/*       <div>
+        <UsersList />
+      </div> */}
     </>
   )
 }
