@@ -1,43 +1,55 @@
 import { useState } from "react";
 
-interface Task {
+interface Tasks {
   id: number;
   taskName: string;
 }
 
-/* write a todolist with add, delete, edit feature */
+/* Write a ToDo List with add, delete, and edit features */
 export const Todos = () => {
-  const [todoList, setTodoList] = useState<Task[]>([]);
-  const [newTask, setNewTask] = useState<string>("");
- 
+  const [tasks, setTasks] = useState<Tasks[]>([]); // Renamed todoList to tasks
+  const [taskInput, setTaskInput] = useState<string>(""); // Renamed newTask to taskInput
+  const [editingTaskId, setEditingTaskId] = useState<number | null>(null); // Renamed editingTodo to editingTaskId
+  const [editedTaskName, setEditedTaskName] = useState<string>(""); // Renamed editedText to editedTaskName
 
-  const newTaskHandler = (e) => {
-    setNewTask(e.target.value);
+  // Handle change in task input field
+  const handleTaskInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTaskInput(e.target.value);
   };
 
-  const todoListHandler = () => {
-    const task :Task = {
-      id: todoList.length === 0 ? 1 : todoList[todoList.length - 1].id + 1,
-      taskName: newTask
-
+  // Add new task to the list
+  const handleAddTask = () => {
+    if (taskInput.trim()) {
+      const newTask: Tasks = {
+        id: tasks.length === 0 ? 1 : tasks[tasks.length - 1].id + 1,
+        taskName: taskInput,
+      };
+      setTasks([...tasks, newTask]);
+      setTaskInput(""); // Reset task input
     }
-    const newTodoList = [...todoList, task];
-    setTodoList(newTodoList);
-    setNewTask("");
   };
 
-  const deleteTaskHandler = (id : number) => {
-    const newTodoList = todoList.filter((task) => {
-      return task.id !== id;
-    });
-
-    setTodoList(newTodoList);
+  // Delete a task by its ID
+  const handleDeleteTask = (id: number) => {
+    setTasks(tasks.filter((task) => task.id !== id));
   };
 
-  const editTaskHandler = (id : number) => {
-    const taskToEdit = todoList.find((task) => task.id === id);
+  // Start editing a task
+  const handleStartEditing = (task: Tasks) => {
+    setEditingTaskId(task.id); // Set the task ID being edited
+    setEditedTaskName(task.taskName); // Set the task name for editing
+  };
 
-  }
+  // Save the edited task
+  const handleSaveEdit = () => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === editingTaskId ? { ...task, taskName: editedTaskName } : task
+      )
+    );
+    setEditingTaskId(null); // Reset editing state
+    setEditedTaskName(""); // Clear the edited task name
+  };
 
   return (
     <div className="App">
@@ -46,43 +58,31 @@ export const Todos = () => {
         <input
           type="text"
           required
-          placeholder="add task"
-          value={newTask}
-          onChange={newTaskHandler}
+          placeholder="Add task"
+          value={taskInput}
+          onChange={handleTaskInputChange}
         />
-        <button onClick={todoListHandler}>Add Task</button>
-        <div>
-        <h5>Gender</h5>
-        <select>
-          <option value="Female">Female</option>
-          <option value="Male">Male</option>
-          <option value="Other">Other</option>
-        </select>
-        </div>
-        <div>
-        <label><input type="radio" value="option1"  />option1</label>
-        <label><input type="radio" value="option2"/>option2</label>
-        <label><input type="radio" value="option3"/>option3</label>
-        </div>
-        <div>
-          <label><input type="checkbox"/>123</label>
-          <label><input type="checkbox"/>456</label>
-          <label><input type="checkbox"/>789</label>
-        </div>
-        
-        
+        <button onClick={handleAddTask}>Add Task</button>
       </div>
       <div className="list">
-        {todoList.map((task) => {
-          return (
-            <div key={task.id}>
-              <h1>{task.taskName}</h1>
-              <button onClick={() => deleteTaskHandler(task.id)}>Delete</button>
-              <button onClick={() => editTaskHandler(task.id)}>Edit</button>
-            </div>
-
-          );
-        })}
+        {tasks.map((task) => (
+          <div key={task.id}>
+            {editingTaskId === task.id ? (
+              <div>
+                <input
+                  type="text"
+                  value={editedTaskName}
+                  onChange={(e) => setEditedTaskName(e.target.value)}
+                />
+                <button onClick={handleSaveEdit}>Save</button>
+              </div>
+            ) : (
+              <span>{task.taskName}</span>
+            )}
+            <button onClick={() => handleDeleteTask(task.id)}>Delete</button>
+            <button onClick={() => handleStartEditing(task)}>Edit</button>
+          </div>
+        ))}
       </div>
     </div>
   );

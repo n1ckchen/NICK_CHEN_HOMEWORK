@@ -1,5 +1,4 @@
-import './App.css'
-
+import "./App.css";
 
 // fetch posts from jsonplaceholder by id
 // Initially fetch from https://jsonplaceholder.typicode.com/posts/1, and display the post data
@@ -24,12 +23,13 @@ import './App.css'
 // If post not found, stop the interval
 
 function App() {
-
   return (
     <>
-
+      <div>
+        <h1>hi</h1>
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
