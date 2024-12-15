@@ -29,6 +29,7 @@ function App() {
     <>
       <div>
         <CounterTimer />
+        <ShoppingCart />
         {/*  <PostViewer /> */}
       </div>
     </>
