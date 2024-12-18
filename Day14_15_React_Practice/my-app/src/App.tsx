@@ -1,5 +1,5 @@
 import "./App.css";
-import ShoppingCart from "./ShoppingCart";
+/* import ShoppingCart from "./ShoppingCart"; */
 import { TicTacToe } from "./TicTacToe";
 /* import { SelectAllForms } from "./SelectAllForms"; */
 
