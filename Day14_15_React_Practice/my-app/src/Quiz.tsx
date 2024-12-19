@@ -16,8 +16,8 @@ const quizzes: Quiz[] = [
   },
   {
     id: 2,
-    question: "What is the capital of France?",
-    choices: ["Berlin", "Madrid", "Paris", "Lisbon"],
+    question: "What is the capital of China?",
+    choices: ["BeiJing", "Madrid", "Paris", "Lisbon"],
     correctAnswer: "Paris",
   },
   {
