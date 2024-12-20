@@ -1,5 +1,6 @@
 import "./App.css";
-import { QuizApp } from "./Quiz";
+import Products from "./Products";
+/* import { QuizApp } from "./Quiz"; */
 /* import Game from "./TTT"; */
 /* import Posts from "./Posts"; */
 /* import { CommentViewer } from "./Comments"; */
@@ -17,7 +18,8 @@ function App() {
       {/* <App /> */}
       {/*       <Posts /> */}
       {/*   <Game /> */}
-      <QuizApp />
+      {/* <QuizApp /> */}
+      <Products />
     </div>
   );
 }
